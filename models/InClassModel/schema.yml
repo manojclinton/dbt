@@ -39,3 +39,15 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+  - name: stg_cricket_match
+    description: |
+      The raw JSON match data for every match
+    columns:
+      - name: file_name
+        description: The GCS object path of the JSON file
+        tests:
+          - not_null
+
+      - name: deliveries
+        description: The full JSON payload of the match file, stored as a JSON column
