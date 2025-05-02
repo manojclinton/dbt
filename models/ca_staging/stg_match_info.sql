@@ -5,6 +5,7 @@ SELECT
   JSON_VALUE(raw_file, '$.info.city')                                  AS city,
   JSON_VALUE(raw_file, '$.info.venue')                                 AS venue,
   JSON_VALUE(raw_file, '$.info.event.match_number')                   AS match_number,
+  JSON_VALUE(raw_file, '$.info.event.stage')                          AS playoff_stage,
   CAST(JSON_VALUE(raw_file, '$.info.dates[0]') AS DATE)                AS match_date,
   JSON_VALUE(raw_file, '$.info.teams[0]')                              AS team1,
   JSON_VALUE(raw_file, '$.info.teams[1]')                              AS team2,
