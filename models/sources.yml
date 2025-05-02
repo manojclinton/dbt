@@ -4,3 +4,4 @@ sources:
     tables:
       - name: cricket_match_raw
       - name: players_info
+      - name: stadium_coordinates
