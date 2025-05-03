@@ -8,7 +8,7 @@ with stadium_lookup AS (
 ),
 
 matches_cte as(
-    SELECT season, city_cleaned city, 
+    SELECT season, match_id, city_cleaned city, 
     COALESCE(match_number,playoff_stage) match_num,
     venue_cleaned venue, 
     match_date,

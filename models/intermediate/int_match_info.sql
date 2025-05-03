@@ -1,5 +1,6 @@
 with match_sorted as(
     SELECT *,
+    SPLIT(filename, '.')[OFFSET(0)] match_id,
      COUNT(*) OVER (PARTITION BY match_date) AS matches_per_day,
      CASE
         WHEN match_number IS NULL THEN 'playoffs'

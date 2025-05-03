@@ -5,3 +5,8 @@ sources:
       - name: cricket_match_raw
       - name: players_info
       - name: stadium_coordinates
+      
+  - name: analytics
+    database: data-management-2-manoj
+    tables:
+      - name: match_weather
