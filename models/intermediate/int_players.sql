@@ -18,7 +18,7 @@ with cte as(
     ) AS player_name
 )
 
-select team_name,player_name,pi.*
+select team_name,cte.player_name,pi.*
 
 from cte
-left join {{ ref('stg_players_info') }} as pi on cte.player_name=pi.name
+left join {{ ref('stg_players_info') }} as pi on cte.player_name=pi.player_name
