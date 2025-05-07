@@ -6,6 +6,7 @@ sources:
       - name: players_info
       - name: stadium_coordinates
       - name: weather_info
+      - name: ipl_teams
       
   # - name: analytics
   #   database: data-management-2-manoj
