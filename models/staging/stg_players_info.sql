@@ -1,20 +1,27 @@
-with player_info_source as (
+with 
+
+source as (
 
     select * from {{ source('cricket_raw', 'players_info') }}
 
 ),
 
-player_info_renamed as (
-    select
-        name,
-        DateofBirth as date_of_birth,
-        gender,
-        BattingStyle as batting_style,
-        BowlingStyle as bowling_style,
-        position
+renamed as (
 
-    from player_info_source
+    select
+        player_name,
+        category,
+        type,
+        age,
+        batting_style,
+        bowling_style,
+        team,
+        player_url,
+        player_img
+
+    from source
 
 )
 
-select * from player_info_renamed
+select * from renamed
+order by player_name 
