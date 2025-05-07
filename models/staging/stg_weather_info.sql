@@ -27,7 +27,8 @@ renamed as (
         pressure_hpa,
         `cloudcover_%`     AS cloudcover_percent,
         rain_mm,
-        wind_m_s
+        wind_m_s,
+        total_views
 
     from source
 
