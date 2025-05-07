@@ -59,7 +59,9 @@ summary as (
              else 0 end)                                 as points
   from team_matches
   group by season, team
-)
+),
+
+new_pt as(
 
 select
   season,
@@ -68,7 +70,10 @@ select
   wins,
   losses,
   no_results,
-  points
-from summary
-order by season, points desc, wins desc, team
+  points,team_id,image_url
+from summary s
+join {{ ref('int_teams') }} tn on s.team=tn.team_name
+)
 
+select * from new_pt
+order by season, points desc, wins desc, team

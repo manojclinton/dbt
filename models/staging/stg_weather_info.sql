@@ -10,7 +10,7 @@ renamed as (
 
     select
         season,
-        match_id,
+        CAST(match_id AS STRING) match_id,
         city,
         match_num,
         venue,
