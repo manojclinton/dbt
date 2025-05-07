@@ -17,7 +17,8 @@ renamed as (
         bowling_style,
         team,
         player_url,
-        player_img
+        player_img,
+        REGEXP_EXTRACT(player_name, r'^[^ ]+\s+(.*)$') AS last_name
 
     from source
 
